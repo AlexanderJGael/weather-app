@@ -26,14 +26,14 @@
     <div class="artboard text-content-primary w-1/3">
         <div id="search-card" class="card card-body items-center gap-4 text-center">
           <h2 class="card-title w-full">Search For a City:</h2>
-          <input id="city-input" class="input outline input-outline w-full" type="text" placeholder="San Diego">
+          <input id="city-input" class="input outline input-outline w-full" type="text" placeholder="San Diego" value='' />
           <button id="search-button" class="btn btn-primary w-full">Search</button>
           <div class="divider m-0"></div>
         </div>
     </div>
 
     <!-- Results -->
-    <div class="card gap-10 flex w-2/3 flex-col">
+    <div id="results-content" class="hidden card gap-10 flex w-2/3 flex-col">
         <div class="card w-full h-72 outline">
             <div class="flex flex-col justify-between card-body">
                 <h2 class="card-title" id="city-name"></h2>
@@ -42,7 +42,7 @@
                 <p id="city-humidity"></p>
             </div>
         </div>
-        <div id="forecast-cards-container" class="hidden w-full flex-col items-center justify-between"> <!-- Update classes here -->
+        <div id="forecast-cards-container" class="w-full flex-col items-center justify-between">
             <h2 class="card-title">5-Day Forecast:</h2>
             <div id="forecast-cards" class="flex space between gap-2">
                 <!-- 5 forecast cards will be dynamically generated -->

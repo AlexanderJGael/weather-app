@@ -8,7 +8,7 @@ $("#search-button").on('click', function() {
     searchHistory.push(city);
   
     let historyButton = $("<button>").addClass("history-item btn bg-neutral-200 w-full").text(city);
-        $("#search-card").append(historyButton);
+    $("#search-card").append(historyButton);
   });
 
 // Search action is performed when user hits 'enter'
@@ -59,12 +59,12 @@ function getWeather(city){
         // Display the weather data
         $('#city-name').text(data.city.name + " (" + dateStr + ") " + " " + weatherEmojiStr);
         $('#city-temp').text("Temp: " + temperatureInFahrenheitCity.toFixed(2) + "°F");
-        $('#city-humidity').text("Humidity: " + data.list[0].main.humidity);
-        $('#city-wind').text("Wind: " + data.list[0].wind.speed);
+        $('#city-humidity').text("Humidity: " + data.list[0].main.humidity + "%");
+        $('#city-wind').text("Wind: " + data.list[0].wind.speed + "mph");
   
       // Clear out old data and show forecast container
       $("#forecast-cards").empty();
-      $("#forecast-cards-container").removeClass("hidden");
+      $("#results-content").removeClass("hidden");
 
       // Loop to fetch the next 5 days weather data
       for (let i = 1; i <= 5; i++) {
@@ -80,7 +80,8 @@ function getWeather(city){
 
           forecastCard.append($("<h3>").addClass("card-title").text(formattedDate + " " + cardWeatherEmojiStr));
           forecastCard.append($("<p>").text("Temp: " + temperatureInFahrenheitForecast.toFixed(2) + "°F"));
-          forecastCard.append($("<p>").text("Humidity: " + data.list[i*8].main.humidity));
+          forecastCard.append($("<p>").text("Humidity: " + data.list[i*8].main.humidity + "%"));
+          forecastCard.append($("<p>").text("Wind Speed: " + data.list[i*8].wind.speed + "mph"));
           
           $("#forecast-cards").append(forecastCard);
         }
