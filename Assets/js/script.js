@@ -7,8 +7,8 @@ $("#search-button").on('click', function() {
     getWeather(city);
     searchHistory.push(city);
   
-    let historyButton = $("<button>").addClass("btn bg-neutral-200 w-full").text(city);
-    $("#search-card").append(historyButton);
+    let historyButton = $("<button>").addClass("history-item btn bg-neutral-200 w-full").text(city);
+        $("#search-card").append(historyButton);
   });
 
 // Search action is performed when user hits 'enter'
@@ -18,6 +18,10 @@ $("#city-input").on('keypress',function(e) {
     }
 });
 
+$(document).on('click', '.history-item', function() { 
+    getWeather($(this).text());
+});
+
 // function to fetch weather data 
 function getWeather(city){
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}`)
@@ -25,6 +29,10 @@ function getWeather(city){
       return response.json();
     })
     .then(function(data){
+        if(data.cod === '404'){
+            alert(data.message); // Alerts the error message.
+            return;
+        }
       if(data.cod === '200'){
    
         var currentDate = new Date();
@@ -80,9 +88,3 @@ function getWeather(city){
     }
   });
 }
-// event when a city in the search history is clicked
-$("#search-history").on('click', function(e) {
-  if(e.target && e.target.nodeName == "LI") {
-    getWeather(e.target.textContent);
-  }
-});
