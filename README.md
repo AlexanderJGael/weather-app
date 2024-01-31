@@ -13,18 +13,18 @@ The Weather Dashboard uses the OpenWeather API to fetch 5 Day weather forecast d
 - Present a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity for future weather conditions.
 - Allow the user to click on a city in the search history and is then presented with current and future conditions for that city.
 
-**Application Appearance and Functionality**
+Application Appearance and Functionality
 ![App Screenshot](./Assets/Screenshot%202024-01-31%20at%2017.15.07.png)
 
 ## Usage
 
-**To access the functional and deployed application, click [here](put_deployed_application_url_here)**
+To access the functional and deployed application, click [here](https://alexanderjgael.github.io/weather-app/)
 
-**To access the GitHub repository, click [here](put_repository_url_here)**
+To access the GitHub repository, click [here](https://github.com/AlexanderJGael/weather-app)
 
 
 ## Persistence 
 
 The weather dashboard uses localStorage to store persistent data such as search history.
 
-**© 2024 by Alex Gael. All Rights Reserved.**
+© 2024 by Alex Gael. All Rights Reserved.
