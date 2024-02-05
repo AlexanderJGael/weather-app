@@ -1,6 +1,7 @@
 const api_key = "510d9b7edf30727293b8784b3262b4df";
 let searchHistory = []; // to store search history
 
+$(document).ready(function() {
 // event when the search button is clicked
 $("#search-button").on('click', function() {
     const city = document.getElementById('city-input').value;
@@ -24,7 +25,7 @@ $(document).on('click', '.history-item', function() {
 
 // function to fetch weather data 
 function getWeather(city){
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}`)
     .then(function(response){
       return response.json();
     })
@@ -89,3 +90,4 @@ function getWeather(city){
     }
   });
 }
+});
