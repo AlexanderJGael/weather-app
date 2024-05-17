@@ -14,7 +14,7 @@ The Weather Dashboard uses the OpenWeather API to fetch 5 Day weather forecast d
 - Allow the user to click on a city in the search history and is then presented with current and future conditions for that city.
 
 Application Appearance and Functionality
-![App Screenshot](./Assets/Screenshot%202024-01-31%20at%2017.15.07.png)
+![App Screenshot](./Assets/weather_demo.png)
 
 ## Usage
 
